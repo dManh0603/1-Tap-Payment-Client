@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  background-size: cover;
+  background-position: center;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(136, 136, 136, 0.281);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555
+}
+
+.text-hover{
+  opacity: 0.7;
+}
+
+.text-hover:hover {
+  cursor: pointer;
+  opacity: 1;
+}

@@ -15,8 +15,6 @@ const Mepage = () => {
   useEffect(() => {
     const storedToken = localStorage.getItem('userToken');
     if (storedToken === null) return navigate('/');
-    console.log('user', user);
-
   }, []);
 
   return (

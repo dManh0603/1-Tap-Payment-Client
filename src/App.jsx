@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+
 import { Route, Routes } from 'react-router-dom';
 import Homepage from './pages/Homepage'
 import Mepage from './pages/Mepage'

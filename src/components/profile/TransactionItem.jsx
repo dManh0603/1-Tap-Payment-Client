@@ -3,7 +3,6 @@ import React from 'react'
 import { convertToGMT7, formatAmount } from '../../helpers/Utils';
 
 const TransactionItem = ({ transaction }) => {
-  console.log(transaction)
   return (
     <Box my={3}>
       {transaction && transaction.type === 'TRANSFER'

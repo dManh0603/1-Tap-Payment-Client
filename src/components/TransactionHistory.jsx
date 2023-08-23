@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import TransactionItem from '../components/profile/TransactionItem';
-import { Button, Card, CardBody, Text, Box, CardHeader, Input, HStack } from '@chakra-ui/react';
+import { Button, Card, CardBody, Text, Box, CardHeader, Input } from '@chakra-ui/react';
 
 const TransactionHistory = () => {
   const storedToken = localStorage.getItem('userToken');

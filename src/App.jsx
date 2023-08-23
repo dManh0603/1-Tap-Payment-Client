@@ -10,6 +10,7 @@ import { UserState } from './contexts/UserProvider';
 import { ChatState } from './contexts/ChatProvider';
 import io from 'socket.io-client'
 import axios from 'axios';
+import _404 from './components/_404';
 
 const ENDPOINT = process.env.SERVER_ENDPOINT;
 let socket, selectedChatCompare;
@@ -67,11 +68,22 @@ function App() {
 
   return (
     <div className="App">
-      <Routes>
-        <Route path="/me/deposit" Component={Depositpage}></Route>
-        <Route path="/me" Component={Mepage}></Route>
-        <Route path="/" Component={Homepage}></Route>
-      </Routes>
+      {user
+        ?
+        <Routes>
+          <Route path="/me/deposit" Component={Depositpage}></Route>
+          <Route path="/" Component={Mepage}></Route>
+
+          <Route path="*" Component={_404}></Route>
+
+        </Routes>
+        :
+        <Routes>
+          <Route path="/" Component={Homepage}></Route>
+          <Route path="*" Component={_404}></Route>
+
+        </Routes>
+      }
     </div>
   );
 }

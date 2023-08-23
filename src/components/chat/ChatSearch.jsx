@@ -6,15 +6,12 @@ import UserListItem from '../profile/UserListItem';
 import axios from 'axios'
 import { ChatState } from '../../contexts/ChatProvider';
 
-const ChatSearch = ({ setSearchLoading, searchLoading }) => {
+const ChatSearch = ({ setSearchLoading, searchLoading, searchResult, setSearchResult }) => {
 
   const { accessChat } = ChatState();
   const [searchValue, setSearchValue] = useState('');
-  const [searchResult, setSearchResult] = useState([]);
   const storedToken = localStorage.getItem('userToken');
   const toast = useToast();
-
-  
 
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
@@ -73,6 +70,13 @@ const ChatSearch = ({ setSearchLoading, searchLoading }) => {
     accessChat('6475d74a202e98a518cbca9b')
   }
 
+  const handleSearchValueChange = (e) => {
+    const newValue = e.target.value;
+    setSearchValue(newValue);
+    if (newValue === '') {
+      setSearchResult([]); // Clear search results when searchValue is empty
+    }
+  };
   return (
     <>
       <Text>Let's have a conversation.</Text>
@@ -80,7 +84,7 @@ const ChatSearch = ({ setSearchLoading, searchLoading }) => {
       <InputGroup mt={3}>
         <Input placeholder='Search for friends and more ...' size='md'
           value={searchValue}
-          onChange={(e) => setSearchValue(e.target.value)}
+          onChange={handleSearchValueChange}
           onKeyDown={handleKeyPress}
         />
 

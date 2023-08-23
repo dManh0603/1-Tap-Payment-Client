@@ -11,7 +11,6 @@ const TransactionItem = ({ transaction }) => {
             You transfer {formatAmount(transaction.amount)} VND to {transaction.receiver.name}
           </Heading>
           <Text fontSize='sm'>
-            <br />
             Transactions id: {transaction._id}
             <br />
             Receiver email: {transaction.receiver.email}
@@ -26,7 +25,6 @@ const TransactionItem = ({ transaction }) => {
             You deposited {formatAmount(transaction.amount)} VND
           </Heading>
           <Text fontSize='sm'>
-            <br />
             Transactions id: {transaction._id}
             <br />
             Method: {transaction.method}

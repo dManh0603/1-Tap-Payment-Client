@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Box, Container, Tab, TabList, TabPanel, TabPanels, Tabs, Text, Image, useToast } from '@chakra-ui/react'
+import { Box, Container, Tab, TabList, TabPanel, TabPanels, Tabs, Text, Image } from '@chakra-ui/react'
 import Login from '../components/Login'
 import Signup from '../components/Signup'
 import { useNavigate } from 'react-router-dom'
@@ -9,18 +9,10 @@ const Homepage = () => {
   const navigate = useNavigate();
 
   const { user } = UserState()
-  const toast = useToast();
 
   useEffect(() => {
     if (user !== null) {
-      toast({
-        title: 'Welcome back',
-        status: 'success',
-        duration: 5000,
-        isClosable: true,
-        position: 'top-right',
-      });
-      navigate('/me')
+      navigate('/')
     };
   })
 
@@ -55,7 +47,7 @@ const Homepage = () => {
         <Tabs variant='soft-rounded' colorScheme='blue'>
           <TabList mb={'1em'}>
             <Tab w={'50%'}>Login</Tab>
-            <Tab w={'50%'}>Forgot password</Tab>
+            <Tab w={'50%'}>Signup</Tab>
           </TabList>
           <TabPanels>
             <TabPanel>

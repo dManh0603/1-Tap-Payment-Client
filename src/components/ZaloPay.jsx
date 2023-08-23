@@ -88,7 +88,7 @@ const ZaloPay = ({ amount, callback }) => {
       <Box >
         <Text fontSize={'xl'}>Vui lòng chọn hình thức thanh toán:</Text>
         <div className="mb-1">
-          <label><input value={'zalopayapp'} onChange={handleRadioChange} type="radio" name="iCheck" className="iradio_flat-blue" defaultChecked /> Ví <img src="/images/logo-zalopay.svg" alt="" style={{ display: "inline" }} /></label>
+          <label><input value={'zalopayapp'} onChange={handleRadioChange} type="radio" name="iCheck" className="iradio_flat-blue" defaultChecked /> Ví <img src="/img/logo-zalopay.svg" alt="" style={{ display: "inline" }} /></label>
         </div>
         <div className="mb-1">
           <label><input value={'CC'} onChange={handleRadioChange} type="radio" name="iCheck" className="iradio_flat-blue" /> Visa, Mastercard, JCB <span className="txtGray">(qua cổng ZaloPay)</span></label>

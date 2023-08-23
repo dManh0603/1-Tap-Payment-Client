@@ -44,7 +44,9 @@ const ChatButton = () => {
 
         <DrawerContent>
           <DrawerHeader borderBottomWidth='1px'>
-            <ChatSearch searchLoading={searchLoading} setSearchLoading={setSearchLoading} />
+            <ChatSearch searchLoading={searchLoading} setSearchLoading={setSearchLoading}
+              searchResult={searchResult} setSearchResult={setSearchResult}
+            />
           </DrawerHeader>
           {
             (!searchLoading) && (searchResult.length === 0) &&
